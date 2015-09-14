@@ -1,1 +1,28 @@
-Users listed here
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <ul class="list-unstyled">
+      <% @users.each do |user| %>
+       
+          <% if user.profile %>
+            <li>
+              <div class="well row">
+                <div class="col-sm-4 text-center">
+                  <% if user.profile.avatar %>
+                  <%= image_tag user.profile.avatar.url(:thumb) %>
+                  <% #else show a stock image %>
+                  <% end %>
+                </div>
+                
+                <div class="">
+                  First name, Last name, Job description
+                </div>
+                
+              </div>
+            </li>
+          <% end %>
+     
+      <% end %>
+    </ul>  
+  </div>
+</div>
